@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacman.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/background5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/blinky-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/blinky.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/blinky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks16.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/bricks9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/cherry-olf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/cherry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/clyde-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/clyde.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/clyde.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/dot-th.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ghostBlue-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ghostBlue.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/ghostBlue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/inicialimagem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/inicialimagem.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/inky-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/inky.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/inky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pac-dot-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pac-dot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pacman-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pacman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pinky-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pinky.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/pinky.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/power_Pellet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/strawberry-olf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/strawberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/control/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/control/GameScreen.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/control/GameScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/control/InitialScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/control/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/BackgroundElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Blinky.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Cherry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Clyde.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Element.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/ElementGivePoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/ElementMove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Ghost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Inky.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/PacDots.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Pacman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Pinky.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/PowerPellet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Strawberry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Consts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Drawing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Stage.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2B5LEPX7rev35jvSYElbSJfrpiC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/jun/IdeaProjects/Pacman",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="control.Main" />
+      <module name="Pacman" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="" />
+      <created>1656190886583</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656190886583</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
