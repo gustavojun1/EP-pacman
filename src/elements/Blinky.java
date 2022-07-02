@@ -5,6 +5,7 @@ import utils.Position;
 
 import java.awt.Graphics;
 import java.io.Serializable;
+import java.sql.SQLOutput;
 import java.util.Random;
 public class Blinky extends Ghost  {
      
@@ -14,7 +15,7 @@ public class Blinky extends Ghost  {
     @Override
     public void autoDraw(Graphics g){
     	if(!this.isMortal){
-    		followPacman();
+			followPacman();
     	}
     	else{
     		escapePacman();

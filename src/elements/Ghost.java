@@ -19,7 +19,8 @@ public abstract class Ghost extends ElementMove {
     public Ghost(String imageName) {
         super(imageName);
     }
-    
+
+	public Pacman pacman;
      
     
     abstract public void autoDraw(Graphics g);
@@ -64,43 +65,58 @@ public abstract class Ghost extends ElementMove {
         int movDirectionPacman=pacman.getMoveDirection();
         
         if (movDirectionPacman==MOVE_LEFT ||movDirectionPacman==MOVE_RIGHT){
-        	followPacmanHorizontal(movDirectionPacman, posPacman);
+        	followPacmanHorizontal();
         }
-        else if(movDirectionPacman==MOVE_DOWN ||movDirectionPacman==MOVE_UP){
-        	followPacmanVertical(movDirectionPacman, posPacman);
-        }		
+        else if(movDirectionPacman==MOVE_DOWN ||movDirectionPacman==MOVE_UP) {
+			followPacmanVertical();
+		} else {
+			moveRandom();
+		}
 	}
-    
-    
 
-    
-	protected void followPacmanHorizontal(int movDirectionPacman,Position posPacman) {
-       	Random gerador = new Random();
-    	if(gerador.nextInt(11)>8){
-    		this.setMovDirection(gerador.nextInt(5));
-    	}
-    	else{
-    		if (posPacman.getY()<this.getPos().getY()){
-    			this.setMovDirection(Pacman.MOVE_LEFT);
-    		}
-    		else{
-    			this.setMovDirection(Pacman.MOVE_RIGHT);	
-    		} 
-    	}
+
+
+	static final int chanceMoverCorretamente = 80; // em porcentagem
+
+	protected void followPacmanHorizontal() {
+		Pacman pacman = Drawing.getGameScreen().getPacman();
+		Random gerador = new Random();
+		if(pacman.isMoving()) {
+			// movimento errado (aleatório)
+			if (gerador.nextInt(101) > chanceMoverCorretamente) {
+				moveRandom();
+			}
+			// movimento correto
+			else {
+				if (pacman.getPos().getY() < this.getPos().getY()) {
+					this.setMovDirection(Pacman.MOVE_LEFT);
+				} else {
+					this.setMovDirection(Pacman.MOVE_RIGHT);
+				}
+			}
+		} else {
+			moveRandom();
+		}
 	}
-	protected void followPacmanVertical(int movDirectionPacman, Position posPacman) {
-    	Random gerador = new Random();
-    	if(gerador.nextInt(11)>8){
-    		this.setMovDirection(gerador.nextInt(5));
-    	}
-    	else{
-    		if (posPacman.getX()<this.getPos().getX()){
-    			this.setMovDirection(Pacman.MOVE_UP);
-    		}
-    		else{
-    			this.setMovDirection(Pacman.MOVE_DOWN);	
-    		} 
-    	}		
+	protected void followPacmanVertical() {
+		Pacman pacman = Drawing.getGameScreen().getPacman();
+		Random gerador = new Random();
+		if(pacman.isMoving()) {
+			// movimento errado (aleatório)
+			if (gerador.nextInt(101) > chanceMoverCorretamente) {
+				moveRandom();
+			}
+			// movimento correto
+			else {
+				if (pacman.getPos().getY() < this.getPos().getY()) {
+					this.setMovDirection(Pacman.MOVE_DOWN);
+				} else {
+					this.setMovDirection(Pacman.MOVE_UP);
+				}
+			}
+		} else {
+			moveRandom();
+		}
 	} 
 	
     protected void escapePacman() {

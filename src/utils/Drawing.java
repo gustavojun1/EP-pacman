@@ -2,9 +2,10 @@ package utils;
 
 import control.GameScreen;
 import java.awt.Graphics;
+import java.io.Serializable;
 import javax.swing.ImageIcon;
 
-public class Drawing {
+public class Drawing implements Serializable {
     static GameScreen screen;
 
     public static GameScreen getGameScreen() {

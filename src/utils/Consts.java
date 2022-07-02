@@ -1,7 +1,9 @@
 package utils;
 
 import java.io.File;
-public class Consts {
+import java.io.Serializable;
+
+public class Consts implements Serializable {
     public static final int CELL_SIZE = 30;
     public static final int NUM_CELLS = 20;
     

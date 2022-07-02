@@ -3,7 +3,7 @@ package utils;
 import java.io.Serializable;
 
 
-public class Position  {
+public class Position implements Serializable {
     /* Elements are positioned in a grid layout (integers).
        However, walking is implemented with float steps (continuous).
        This is why x and y are double types.

@@ -7,10 +7,7 @@ import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
+import javax.swing.*;
 
 import utils.Consts;
 
@@ -29,7 +26,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		configureOpenButton();
 		configureComboBox();
 	}
-	
+
 	private void configureInitialScreen(){
 		int sizeWidth = Consts.NUM_CELLS * Consts.CELL_SIZE + getInsets().left + getInsets().right;
 		int sizeHeight = Consts.NUM_CELLS * Consts.CELL_SIZE + getInsets().top + getInsets().bottom;

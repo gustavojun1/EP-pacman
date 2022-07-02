@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.Serializable;
 import javax.swing.ImageIcon;
-public abstract class Element {
+public abstract class Element implements Serializable {
 
     protected ImageIcon imageIcon;
     protected Position pos;

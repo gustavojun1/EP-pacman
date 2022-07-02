@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.io.Serializable;
 
 
-public class Pacman extends ElementMove  {
+public class Pacman extends ElementMove {
     
     private int score=0;
     private int remainingScore=0;
@@ -39,8 +39,7 @@ public class Pacman extends ElementMove  {
 	public long getStartTimePower() {
 		return this.startTimePower;
 	}
-	
-	
+
 	public void setStartTimePower(long start){
 		this.startTimePower=start;
 	}
@@ -69,7 +68,7 @@ public class Pacman extends ElementMove  {
 	public void minusNumberGhotstoEat() {
 		this.numberGhosttoEat--;
 	}
-	
+
 	public void addScore(int i) {
 		score=score+i;
 	}
@@ -77,8 +76,10 @@ public class Pacman extends ElementMove  {
 	public void addRemainingScore(int i) {
 		this.remainingScore=this.remainingScore+i;
 	}
-    
-    @Override
+
+
+
+	@Override
     public void autoDraw(Graphics g){
         Drawing.draw(g, this.imageIcon, pos.getY(), pos.getX());
     }
@@ -87,5 +88,27 @@ public class Pacman extends ElementMove  {
 		return numberGhosttoEat;
 	}
 
+	// Testezinho
+	private boolean moving = false;
 
+	public boolean isMoving() {
+		return moving;
+	}
+
+	public void setMoving(boolean moving) {
+		this.moving = moving;
+	}
+
+	@Override
+	public void setMovDirection(int direction) {
+		super.setMovDirection(direction);
+		if(direction == ElementMove.STOP) {
+			setMoving(false);
+			System.out.println("moving setada para " + moving);
+		}
+		else {
+			setMoving(true);
+			System.out.println("moving setada para " + moving);
+		}
+	}
 }

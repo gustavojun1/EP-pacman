@@ -2,7 +2,7 @@ package utils;
 
 import java.io.Serializable;
 
-public class Stage {
+public class Stage implements Serializable {
 	int id=1;
     int [][]matrix;
     String background;

@@ -107,10 +107,10 @@ public class GameController {
                 if(eTemp.isTransposable() && eTemp.isMortal()){
                     elements.remove(eTemp);
                     if (eTemp instanceof Ghost){
-                  	  pacman.minusNumberGhotstoEat();
-                  	  pacman.addScore(200*(4-pacman.getNumberGhosttoEat()));
-                  	  pacman.addRemainingScore(200*(4-pacman.getNumberGhosttoEat()));
-                    } 
+						pacman.minusNumberGhotstoEat();
+						pacman.addScore(200*(4-pacman.getNumberGhosttoEat()));
+						pacman.addRemainingScore(200*(4-pacman.getNumberGhosttoEat()));
+                    }
                     
                     if (eTemp instanceof ElementGivePoint){                     
                       pacman.addScore(((ElementGivePoint) eTemp).getNumberPoints());
@@ -129,9 +129,9 @@ public class GameController {
                     }
                 }
                 int remainingScore=pacman.getRemainingScore();
-                if(remainingScore>1000){
+                if(remainingScore>10000){
                 	pacman.addLife();
-                	pacman.setRemainingScore(remainingScore-1000);
+                	pacman.setRemainingScore(remainingScore-10000);
                 }
                 
             }   

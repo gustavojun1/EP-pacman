@@ -20,13 +20,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.Console;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -73,7 +67,6 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         else {
         	this.stage = new Stage(Main.level);
         	fillInitialElemArrayFromMatrix(stage.getMatrix());
-
         }
     }
     
@@ -131,9 +124,16 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 		
 	}
 
-	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException{
-		        /*Apagar o throw e implementar o método openSavedGame aqui*/
-		        throw new FileNotFoundException();                 
+	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException {
+        try(FileInputStream savefile = new FileInputStream("savefile1.ser")) {
+            ObjectInputStream entrada = new ObjectInputStream(savefile);
+            this.stage = (Stage) entrada.readObject();
+//            this.stage = new Stage(Main.level);
+//            fillInitialElemArrayFromMatrix(stage.getMatrix());
+            entrada.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 	public final void addElement(Element elem) {
@@ -208,15 +208,27 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
             pacman.setMovDirection(Pacman.MOVE_RIGHT);
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             pacman.setMovDirection(Pacman.STOP);
-        } else if ((e.getKeyCode() == KeyEvent.VK_S) && ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0)) {
-            saveElemArrayandStage(); 
- 
-        } 
+        } else if ((e.getKeyCode() == KeyEvent.VK_S) && ((e.getModifiersEx() & KeyEvent.CTRL_DOWN_MASK) != 0)) {
+            saveElemArrayandStage();
+        }
+        pacman.setMoving(true);
     }
-    
+
     private void saveElemArrayandStage() {
-    	System.out.println("Falta implementar");
- 	}
+        try (FileOutputStream savefile = new FileOutputStream("savefile1.ser");) {
+            ObjectOutputStream saida = new ObjectOutputStream(savefile);
+            saida.writeObject(this.stage);
+//            saida.writeObject(this.elemArray);
+            saida.close();
+        } catch(FileNotFoundException e) {
+            System.out.println("arquivo de save não encontrado");
+        } catch(IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        } finally {
+            System.out.println("jogo salvo");
+        }
+    }
 
 	/**
      * This method is called from within the constructor to initialize the form.
