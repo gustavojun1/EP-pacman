@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="ajuste do">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savefile1.ser" beforeDir="false" afterPath="$PROJECT_DIR$/savefile1.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameScreen.java" afterDir="false" />
-    </list>
+    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="Implementação da feature de save." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656193421254</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementação da feature de save.">
+      <created>1656792252637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656792252637</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,7 +105,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="versão base (sem alterações)" />
-    <option name="LAST_COMMIT_MESSAGE" value="versão base (sem alterações)" />
+    <MESSAGE value="Implementação da feature de save." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementação da feature de save." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
