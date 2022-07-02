@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 public class GameScreen extends javax.swing.JFrame implements KeyListener {
     
     private Pacman pacman;
-    private ArrayList<Element> elemArray;
+    private ArrayList elemArray;
     private final GameController controller = new GameController();
     private Stage stage;
     int cont = 0; 
@@ -94,40 +94,59 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         Clyde clyde=new Clyde("clyde.png");
         clyde.setPosition (8,9);
         this.addElement(clyde);
-        
-        
+
+        fillMatrix(matrix);
+
+	}
+
+    private void fillMatrix(int[][] matrix) {
         for (int i=0;i<Consts.NUM_CELLS; i=i+1){
-        	for(int j=0; j<Consts.NUM_CELLS; j=j+1){
-        		switch (matrix[i][j]) {
-        		case 1:
-        			Wall wall1=new Wall("bricks6.png");
-        			wall1.setPosition (i,j);
-        			this.addElement(wall1);
-        			break;
-                case 0:    
-                    PacDots pacDot=new PacDots("pac-dot.png");
-                    pacDot.setPosition (i,j);
-                    this.addElement(pacDot);
-                    pacman.addNumberDotstoEat();
-                    break;
-                case 6:    
-                    PowerPellet power=new PowerPellet("power_Pellet.png");
-                    power.setPosition (i,j);
-                    this.addElement(power);
-                    break;    
-                default:
-                    break;
-        		}
+            for(int j=0; j<Consts.NUM_CELLS; j=j+1){
+                switch (matrix[i][j]) {
+                    case 1:
+                        Wall wall1=new Wall("bricks6.png");
+                        wall1.setPosition (i,j);
+                        this.addElement(wall1);
+                        break;
+                    case 0:
+                        PacDots pacDot=new PacDots("pac-dot.png");
+                        pacDot.setPosition (i,j);
+                        this.addElement(pacDot);
+                        pacman.addNumberDotstoEat();
+                        break;
+                    case 6:
+                        PowerPellet power=new PowerPellet("power_Pellet.png");
+                        power.setPosition (i,j);
+                        this.addElement(power);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
-		
-	}
+    }
+    private void saveElemArrayandStage() {
+        try (FileOutputStream savefile = new FileOutputStream("savefile1.ser");) {
+            ObjectOutputStream saida = new ObjectOutputStream(savefile);
+            saida.writeObject(this.stage);
+            saida.writeObject(this.elemArray);
+            saida.close();
+            System.out.println("jogo salvo");
+        } catch(FileNotFoundException e) {
+            System.out.println("arquivo de save não encontrado");
+        } catch(IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
 	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException {
         try(FileInputStream savefile = new FileInputStream("savefile1.ser")) {
             ObjectInputStream entrada = new ObjectInputStream(savefile);
             this.stage = (Stage) entrada.readObject();
+            this.elemArray.addAll((ArrayList<Element>)entrada.readObject());
+            pacman = (Pacman) this.elemArray.get(0);
 //            this.stage = new Stage(Main.level);
 //            fillInitialElemArrayFromMatrix(stage.getMatrix());
             entrada.close();
@@ -214,21 +233,6 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         pacman.setMoving(true);
     }
 
-    private void saveElemArrayandStage() {
-        try (FileOutputStream savefile = new FileOutputStream("savefile1.ser");) {
-            ObjectOutputStream saida = new ObjectOutputStream(savefile);
-            saida.writeObject(this.stage);
-//            saida.writeObject(this.elemArray);
-            saida.close();
-        } catch(FileNotFoundException e) {
-            System.out.println("arquivo de save não encontrado");
-        } catch(IOException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        } finally {
-            System.out.println("jogo salvo");
-        }
-    }
 
 	/**
      * This method is called from within the constructor to initialize the form.

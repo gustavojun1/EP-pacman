@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="ajuste do">
-      <change afterPath="$PROJECT_DIR$/control.saveFiles.savefile1.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enunciados/EnunciadoKarina.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enunciados/EnunciadoOriginal.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/savefile1.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control/savefile1.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control/savefiles/savefile2.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control/savefiles/savefile3.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savefile1.ser" beforeDir="false" afterPath="$PROJECT_DIR$/savefile1.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/InitialScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/InitialScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Blinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Blinky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Pacman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Pinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Pinky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Consts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Consts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Drawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Drawing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Stage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,5 +103,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="versão base (sem alterações)" />
     <option name="LAST_COMMIT_MESSAGE" value="versão base (sem alterações)" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
