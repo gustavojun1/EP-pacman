@@ -147,8 +147,6 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
             this.stage = (Stage) entrada.readObject();
             this.elemArray.addAll((ArrayList<Element>)entrada.readObject());
             pacman = (Pacman) this.elemArray.get(0);
-//            this.stage = new Stage(Main.level);
-//            fillInitialElemArrayFromMatrix(stage.getMatrix());
             entrada.close();
         } catch (IOException e) {
             e.printStackTrace();

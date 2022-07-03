@@ -41,18 +41,14 @@ public class GameController {
         		Main.gamePacMan.reStartGame(pacman.getLifes());
         	}
         	else{
-        		Main.gamePacMan.dispose();
-        		JOptionPane.showMessageDialog(null, "Fim do jogo");
-        		System.exit(0);
+				endGame();
         	}
         		
         }
         else if(pacman.getNumberDotstoEat() == 0){  
         	Main.level += 1;
         	if(Main.level>=4){
-        		Main.gamePacMan.dispose();
-        		JOptionPane.showMessageDialog(null, "Fim do jogo");
-        		System.exit(0);
+				endGame();
         	}
         	else{
         		Main.gamePacMan.reStartGame(1);
@@ -77,7 +73,13 @@ public class GameController {
 	        }
         }
     }
-    
+
+	private void endGame() {
+		Main.gamePacMan.dispose();
+		JOptionPane.showMessageDialog(null, "Fim do jogo");
+		System.exit(0);
+	}
+
 	private boolean checkOverlapGhostPacman(ArrayList<Element> elements, Pacman pacman,int numberGhost) {
         boolean overlapGhostPacman=false;
         for (int i=1;i<=numberGhost;i++){
@@ -129,7 +131,7 @@ public class GameController {
                     }
                 }
                 int remainingScore=pacman.getRemainingScore();
-                if(remainingScore>10000){
+                if(remainingScore>=10000){
                 	pacman.addLife();
                 	pacman.setRemainingScore(remainingScore-10000);
                 }
