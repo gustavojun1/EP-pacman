@@ -1,16 +1,7 @@
 package control;
 
-import elements.Blinky;
+import elements.*;
 
-import elements.Cherry;
-import elements.Clyde;
-import elements.Inky;
-import elements.PacDots;
-import elements.Pinky;
-import elements.PowerPellet;
-import elements.Pacman;
-import elements.Element;
-import elements.Wall;
 import utils.Consts;
 import utils.Drawing;
 import utils.Stage;
@@ -160,16 +151,42 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
     public void removeElement(Element elem) {
         elemArray.remove(elem);
     }
-    
-    public void reStartGame(int numberLifes){
+
+    // visando arrumar o bug do reinício total quando se morre com duas vidas, esse método foi dividido entre os dois seguintes
+//    public void reStartGame(int numberLives) {
+//    	elemArray.clear();
+//    	elemArray = new ArrayList<Element>();
+//        pacman = null;
+//
+//        this.stage = new Stage(Main.level);
+//    	fillInitialElemArrayFromMatrix(stage.getMatrix());
+//    	((Pacman)elemArray.get(0)).setNumberLifes(numberLives);
+//    }
+
+    // reinicia o nível quando se morre
+    public void reStartLevel(){
+        Pacman pacman = ((Pacman)elemArray.get(0));
+        pacman.setPosition(1, 1);
+        // caso o fantasma esteja no exato lugar que o pacman nasce, mover o fantasma novamente para o meio
+        for(int i = 1; i <= pacman.getNumberGhosttoEat(); i++) {
+            Ghost ghost = (Ghost) elemArray.get(i);
+            if(ghost.getPos().getX() - pacman.getPos().getX() >= 1)
+                ghost.setPosition(8, 9);
+        }
+    }
+
+    // reinicia o nível quando se passa de nível
+    public void startNextLevel(int numberLives, int score){
     	elemArray.clear();
     	elemArray = new ArrayList<Element>();
         pacman = null;
-        
+
         this.stage = new Stage(Main.level);
-    	fillInitialElemArrayFromMatrix(stage.getMatrix());
-    	((Pacman)elemArray.get(0)).setNumberLifes(numberLifes);
+        fillInitialElemArrayFromMatrix(stage.getMatrix());
+    	((Pacman)elemArray.get(0)).setNumberLifes(numberLives);
+        ((Pacman)elemArray.get(0)).addScore(score);
     }
+
     
     @Override
     public void paint(Graphics gOld) {

@@ -38,20 +38,20 @@ public class GameController {
         if(overlapGhostPacman) { 
         	pacman.setNumberLifes(pacman.getLifes()-1);
         	if(pacman.getLifes()>0){
-        		Main.gamePacMan.reStartGame(pacman.getLifes());
+        		Main.gamePacMan.reStartLevel();
         	}
         	else{
 				endGame();
         	}
         		
         }
-        else if(pacman.getNumberDotstoEat() == 0){  
+        else if(pacman.getNumberDotstoEat() == 0){
         	Main.level += 1;
         	if(Main.level>=4){
 				endGame();
         	}
         	else{
-        		Main.gamePacMan.reStartGame(1);
+        		Main.gamePacMan.startNextLevel(pacman.getLifes(), pacman.getScore());
         	}
         }
         else{

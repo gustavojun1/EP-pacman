@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="Implementação da feature de save.">
+    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="Criação do método endgame.">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Desktop.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savefile1.ser" beforeDir="false" afterPath="$PROJECT_DIR$/savefile1.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/PacDots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/PacDots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Ghost.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,19 +27,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jun/IdeaProjects/Pacman&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "/home/jun/IdeaProjects/Pacman",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -71,7 +72,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="false" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="" />
@@ -101,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656792369462</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Criação do método endgame.">
+      <created>1656853089796</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656853089796</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,7 +127,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="versão base (sem alterações)" />
     <MESSAGE value="Implementação da feature de save." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementação da feature de save." />
+    <MESSAGE value="Criação do método endgame." />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação do método endgame." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

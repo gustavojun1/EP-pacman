@@ -10,7 +10,7 @@ public class PacDots extends ElementGivePoint {
 		
     public PacDots(String imageName) {
         super(imageName);
-        this.numberPoints = 500;
+        this.numberPoints = 10;
     }
 
     

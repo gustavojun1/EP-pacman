@@ -24,8 +24,8 @@ public abstract class Ghost extends ElementMove {
      
     
     abstract public void autoDraw(Graphics g);
-    
-    public void changeGhosttoBlue(String imageName) {
+
+	public void changeGhosttoBlue(String imageName) {
         this.isTransposable = true;
         this.isMortal = true;
         
