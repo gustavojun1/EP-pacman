@@ -47,7 +47,7 @@ public class GameController {
         }
         else if(pacman.getNumberDotstoEat() == 0){
         	Main.level += 1;
-        	if(Main.level>=4){
+        	if(Main.level>=5){
 				endGame();
         	}
         	else{

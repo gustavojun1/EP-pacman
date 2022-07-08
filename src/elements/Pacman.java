@@ -104,11 +104,9 @@ public class Pacman extends ElementMove {
 		super.setMovDirection(direction);
 		if(direction == ElementMove.STOP) {
 			setMoving(false);
-			System.out.println("moving setada para " + moving);
 		}
 		else {
 			setMoving(true);
-			System.out.println("moving setada para " + moving);
 		}
 	}
 }

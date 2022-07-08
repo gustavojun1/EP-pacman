@@ -25,6 +25,7 @@ public class InitialScreen extends javax.swing.JFrame {
 	JMenuItem nivel1;
 	JMenuItem nivel2;
 	JMenuItem nivel3;
+	JMenuItem nivel4;
 	private static ButtonGroup niveis;
 	public InitialScreen() {
 		setIconImage((new ImageIcon("imgs/pacman_logo.png")).getImage());
@@ -58,10 +59,15 @@ public class InitialScreen extends javax.swing.JFrame {
 		nivel3.addItemListener(new ListenerLevel3());
 		selecionarNivel.add(nivel3);
 
+		nivel4 = new JRadioButtonMenuItem("Nível 4");
+		nivel4.addItemListener(new ListenerLevel4());
+		selecionarNivel.add(nivel4);
+
 		niveis = new ButtonGroup();
 		niveis.add(nivel1);
 		niveis.add(nivel2);
 		niveis.add(nivel3);
+		niveis.add(nivel4);
 		niveis.setSelected(nivel1.getModel(), true);
 
 		configureInitialScreen();
@@ -132,6 +138,15 @@ public class InitialScreen extends javax.swing.JFrame {
 		public void itemStateChanged(ItemEvent ev) {
 			if(ev.getStateChange() == ItemEvent.SELECTED) {
 				Main.level = 3;
+			}
+		}
+	}
+
+	public class ListenerLevel4 implements ItemListener {
+		@Override
+		public void itemStateChanged(ItemEvent ev) {
+			if(ev.getStateChange() == ItemEvent.SELECTED) {
+				Main.level = 4;
 			}
 		}
 	}
