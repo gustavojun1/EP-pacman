@@ -1,5 +1,6 @@
 package control;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -12,20 +13,60 @@ import javax.swing.*;
 import utils.Consts;
 
 public class InitialScreen extends javax.swing.JFrame {
+
 	private static final long serialVersionUID = 1L;
-	private JButton startButton;
-	private JButton openButton;
 	private final String nomeImagemInicial = "inicialimagem.png";
-	private static String[] levels = { "Level 1", "Level 2", "Level 3" };
-	
-	private JComboBox<String> box;
-	
-	public InitialScreen(){
+
+	JMenuBar menuBar;
+	JMenu jogar;
+	JMenuItem novoJogo;
+	JMenuItem jogoSalvo;
+	JMenu selecionarNivel;
+	JMenuItem nivel1;
+	JMenuItem nivel2;
+	JMenuItem nivel3;
+	private static ButtonGroup niveis;
+	public InitialScreen() {
+		setIconImage((new ImageIcon("imgs/pacman_logo.png")).getImage());
+
+		menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+
+		jogar = new JMenu("Jogar");
+		menuBar.add(jogar);
+
+		novoJogo = new JMenuItem("Novo Jogo");
+		novoJogo.addActionListener(new HandlerStartButton());
+		jogar.add(novoJogo);
+
+		jogoSalvo = new JMenuItem("Jogo Salvo");
+		jogoSalvo.addActionListener(new HandlerOpenButton());
+		jogar.add(jogoSalvo);
+
+		selecionarNivel = new JMenu("Selecionar Nível");
+		menuBar.add(selecionarNivel);
+
+		nivel1 = new JRadioButtonMenuItem("Nível 1");
+		nivel1.addItemListener(new ListenerLevel1());
+		selecionarNivel.add(nivel1);
+
+		nivel2 = new JRadioButtonMenuItem("Nível 2");
+		nivel2.addItemListener(new ListenerLevel2());
+		selecionarNivel.add(nivel2);
+
+		nivel3 = new JRadioButtonMenuItem("Nível 3");
+		nivel3.addItemListener(new ListenerLevel3());
+		selecionarNivel.add(nivel3);
+
+		niveis = new ButtonGroup();
+		niveis.add(nivel1);
+		niveis.add(nivel2);
+		niveis.add(nivel3);
+		niveis.setSelected(nivel1.getModel(), true);
+
 		configureInitialScreen();
-		configureStartButton();
-		configureOpenButton();
-		configureComboBox();
 	}
+
 
 	private void configureInitialScreen(){
 		int sizeWidth = Consts.NUM_CELLS * Consts.CELL_SIZE + getInsets().left + getInsets().right;
@@ -47,65 +88,51 @@ public class InitialScreen extends javax.swing.JFrame {
         }	
         //pack();
 	}
-	private void configureStartButton(){
-		startButton = new JButton("Iniciar");
-		startButton.setSize(100, 50);
-		startButton.setAlignmentX(CENTER_ALIGNMENT);
-		startButton.setAlignmentY(CENTER_ALIGNMENT);
-		startButton.setLocation(250, 275);
-		startButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-		HandlerStartButton handlerIniciarJogo = new HandlerStartButton();
-		startButton.addActionListener(handlerIniciarJogo);
-		add(startButton);
-	}
-	
+
 	/**
 	 * Configurar botão de Iniciar Jogo
 	 */
-	private void configureOpenButton(){
-		startButton = new JButton("Open");
-		startButton.setSize(100, 50);
-		startButton.setAlignmentX(CENTER_ALIGNMENT);
-		startButton.setAlignmentY(CENTER_ALIGNMENT);
-		startButton.setLocation(250, 500);
-		startButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-		HandlerOpenButton handlerOpen = new HandlerOpenButton();
-		startButton.addActionListener(handlerOpen);
-		add(startButton);
-	}
-	
-	
-	private void configureComboBox(){
-		box = new JComboBox<String>(levels);
-		box.setSize(100, 40);
-		box.setSelectedIndex(0);
-		box.setLocation(500, 10);
-		box.addItemListener(new ItemListener(){
-			public void itemStateChanged(ItemEvent event){
-				if(event.getStateChange() == ItemEvent.SELECTED){ 
-					JComboBox<String> cb = (JComboBox<String>)event.getSource();
-					Main.level = cb.getSelectedIndex() + 1;
-				}
-			}			
-		});
-		add(box);
-	}
 
 	public class HandlerStartButton implements ActionListener{
 		public void actionPerformed(ActionEvent ev){
-			Main.initialScreen.setVisible(false);  
+			Main.initialScreen.setVisible(false);
 	    	Main.initialScreen.dispose();
+//			Main.level = InitialScreen.level;
 			Main.startGame();
 		}
 	}
 
- 
 	public class HandlerOpenButton implements ActionListener{
 		public void actionPerformed(ActionEvent ev){
 			Main.initialScreen.setVisible(false);  
 	    	Main.initialScreen.dispose();
 	    	Main.openSavedGame = true;
 	    	Main.startGame();
+		}
+	}
+
+	public class ListenerLevel1 implements ItemListener {
+		@Override
+		public void itemStateChanged(ItemEvent ev) {
+			if(ev.getStateChange() == ItemEvent.SELECTED) {
+				Main.level = 1;
+			}
+		}
+	}
+	public class ListenerLevel2 implements ItemListener {
+		@Override
+		public void itemStateChanged(ItemEvent ev) {
+			if(ev.getStateChange() == ItemEvent.SELECTED) {
+				Main.level = 2;
+			}
+		}
+	}
+	public class ListenerLevel3 implements ItemListener {
+		@Override
+		public void itemStateChanged(ItemEvent ev) {
+			if(ev.getStateChange() == ItemEvent.SELECTED) {
+				Main.level = 3;
+			}
 		}
 	}
 }

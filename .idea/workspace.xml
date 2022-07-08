@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="Criação do método endgame.">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Desktop.xml" afterDir="false" />
+    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="Resolução do bug de resetar os dados ao passar de nível.">
+      <change afterPath="$PROJECT_DIR$/imgs/pacman_logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/control/InitialScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/InitialScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +32,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "/home/jun/IdeaProjects/Pacman",
+    "last_opened_file_path": "C:/Users/Desktop/IdeaProjects/EP-pacman/imgs",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -43,6 +41,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Desktop\IdeaProjects\EP-pacman\imgs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -109,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656853089796</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Resolução do bug de resetar os dados ao passar de nível.">
+      <created>1656856972362</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656856972362</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,7 +134,8 @@
     <MESSAGE value="versão base (sem alterações)" />
     <MESSAGE value="Implementação da feature de save." />
     <MESSAGE value="Criação do método endgame." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação do método endgame." />
+    <MESSAGE value="Resolução do bug de resetar os dados ao passar de nível." />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolução do bug de resetar os dados ao passar de nível." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
