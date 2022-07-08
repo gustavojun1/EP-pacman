@@ -14,17 +14,18 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 
 public abstract class Ghost extends ElementMove {
-    
-    
-    public Ghost(String imageName) {
+
+	// construtor da classe que apenas chama o construtor de ElementMove
+	public Ghost(String imageName) {
         super(imageName);
     }
 
 	public Pacman pacman;
-     
-    
-    abstract public void autoDraw(Graphics g);
 
+	// método abstrato de desenho do elemento em questão na tela
+	abstract public void autoDraw(Graphics g);
+
+	// método que troca o estado do fantasma do normal para o azul (efeito da power pellet)
 	public void changeGhosttoBlue(String imageName) {
         this.isTransposable = true;
         this.isMortal = true;
@@ -42,6 +43,7 @@ public abstract class Ghost extends ElementMove {
         }
     }
 
+	// método que desfaz a troca o estado do fantasma do método anterior (azul->normal)
     public void changeGhosttoNormal(String imageName) {
         this.isTransposable = true;
         this.isMortal = false;
@@ -59,6 +61,7 @@ public abstract class Ghost extends ElementMove {
         }
     }
 
+	// método que faz o fantasma em questão seguir o pacman conforme a sua direção de movimento
     protected void followPacman() {
     	Pacman pacman=Drawing.getGameScreen().getPacman();
         Position posPacman=pacman.getPos();
@@ -74,10 +77,9 @@ public abstract class Ghost extends ElementMove {
 		}
 	}
 
-
-
 	static final int chanceMoverCorretamente = 80; // em porcentagem
 
+	// método que faz o fantasma seguir o pacman horizontalmente
 	protected void followPacmanHorizontal() {
 		Pacman pacman = Drawing.getGameScreen().getPacman();
 		Random gerador = new Random();
@@ -98,6 +100,8 @@ public abstract class Ghost extends ElementMove {
 			moveRandom();
 		}
 	}
+
+	// método que faz o fantasma seguir o pacman verticalmente
 	protected void followPacmanVertical() {
 		Pacman pacman = Drawing.getGameScreen().getPacman();
 		Random gerador = new Random();
@@ -118,7 +122,8 @@ public abstract class Ghost extends ElementMove {
 			moveRandom();
 		}
 	} 
-	
+
+	// método que faz o fantasma fugir do pacman baseado em sua direção de movimento
     protected void escapePacman() {
     	Pacman pacman=Drawing.getGameScreen().getPacman();
         Position posPacman=pacman.getPos();

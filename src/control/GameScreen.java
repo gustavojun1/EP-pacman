@@ -25,7 +25,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
     private Stage stage;
     int cont = 0; 
     String fileName="jogo.ser";
-    
+
+    // construtor da classe que cria e configura a tela jogável
     public GameScreen() {
         this.setVisible(true);
     	Main.time = System.currentTimeMillis();
@@ -60,11 +61,13 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         	fillInitialElemArrayFromMatrix(stage.getMatrix());
         }
     }
-    
+
+    // getter que retorna o pacman
     public Pacman getPacman(){
     	return pacman;
     }    
-    
+
+    // método que preenche a matriz com as posições iniciais de cada elemento
     private void fillInitialElemArrayFromMatrix(int [][]matrix) {
 	 	pacman = new Pacman("pacman.png");
         pacman.setPosition(1,1);
@@ -90,6 +93,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 
 	}
 
+    // método auxiliar ao anterior que preenche a matriz com os elementos não móveis
     private void fillMatrix(int[][] matrix) {
         for (int i=0;i<Consts.NUM_CELLS; i=i+1){
             for(int j=0; j<Consts.NUM_CELLS; j=j+1){
@@ -117,6 +121,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         }
 
     }
+
+    // método que salva o jogo (mais precisamente stage e elemArray) via serialização
     private void saveElemArrayandStage() {
         try (FileOutputStream savefile = new FileOutputStream("savefile1.ser");) {
             ObjectOutputStream saida = new ObjectOutputStream(savefile);
@@ -132,6 +138,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         }
     }
 
+    // método que abre o save do jogo serializado utilizando o método anterior
 	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException {
         try(FileInputStream savefile = new FileInputStream("savefile1.ser")) {
             ObjectInputStream entrada = new ObjectInputStream(savefile);
@@ -144,10 +151,12 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         }
     }
 
+    // método que adiciona um elemento no array de elementos
 	public final void addElement(Element elem) {
         elemArray.add(elem);
     }
-    
+
+    // método que remove um elemento do array de elementos
     public void removeElement(Element elem) {
         elemArray.remove(elem);
     }
@@ -163,7 +172,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 //    	((Pacman)elemArray.get(0)).setNumberLifes(numberLives);
 //    }
 
-    // reinicia o nível quando se morre
+    // método que reinicia o level quando o pacman perde uma vida
     public void reStartLevel(){
         Pacman pacman = ((Pacman)elemArray.get(0));
         pacman.setPosition(1, 1);
@@ -175,7 +184,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         }
     }
 
-    // reinicia o nível quando se passa de nível
+    // método que reinicia o nível quando se passa de nível
     public void startNextLevel(int numberLives, int score){
     	elemArray.clear();
     	elemArray = new ArrayList<Element>();
@@ -187,7 +196,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         ((Pacman)elemArray.get(0)).addScore(score);
     }
 
-    
+    // método que "pinta" os elementos da janela em questão
     @Override
     public void paint(Graphics gOld) {
         Graphics g = getBufferStrategy().getDrawGraphics();
@@ -219,7 +228,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
             getBufferStrategy().show();
         }
     }
-    
+
+
     public void go() {
         TimerTask task = new TimerTask() {
             
@@ -230,7 +240,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         Timer timer = new Timer();
         timer.schedule(task, 0, Consts.DELAY);
     }
-    
+
+    // método que checa qual foi a entrada do teclado do usuário e realiza a respectiva ação
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             pacman.setMovDirection(Pacman.MOVE_UP);
@@ -256,6 +267,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
+    // método que inicia os componentes swing do jogo
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -291,6 +304,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 		
 	}
 
+    // método que se livra dos recursos alocados pela classe e sua família
 	public void dispose(){
 		super.dispose();
 	}

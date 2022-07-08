@@ -12,7 +12,7 @@ import utils.Consts;
 import utils.Position;
 
 public class GameController {
-	
+	// método que desenha todos os elementos em suas determinadas posições em tela
     public void drawAllElements(ArrayList<Element> elemArray, Graphics g){
     	Pacman pacman=(Pacman) elemArray.get(0);
     	int numberGhost=pacman.getNumberGhosttoEat();
@@ -25,6 +25,8 @@ public class GameController {
         }
         
     }
+
+	// método que processa todos os elementos, checando e aplicando todos os eventos a cada frame
     public void processAllElements(ArrayList<Element> elements, int [][]matrix, int cont){
         if(elements.isEmpty())
             return;
@@ -55,7 +57,7 @@ public class GameController {
         	}
         }
         else{
-	        checkPacmanEatSomeOneAndOrTimeFruittoDesappear(elements,pacman);
+	        checkPacmanEatSomeOneAndOrTimeFruittoDisappear(elements,pacman);
 	        checkTimetoAppearFruit(elements,matrix);
 	        checkTimeGhostBeNormal(elements,pacman);
 	
@@ -74,12 +76,14 @@ public class GameController {
         }
     }
 
+	// método que encerra o jogo, fechando a JFrame e exibindo uma mensagem de fim de jogo
 	private void endGame() {
 		Main.gamePacMan.dispose();
 		JOptionPane.showMessageDialog(null, "Fim do jogo");
 		System.exit(0);
 	}
 
+	// método que checa o evento de sobreposição entre fantasma e pacman e retorna o booleano correspondente
 	private boolean checkOverlapGhostPacman(ArrayList<Element> elements, Pacman pacman,int numberGhost) {
         boolean overlapGhostPacman=false;
         for (int i=1;i<=numberGhost;i++){
@@ -89,6 +93,8 @@ public class GameController {
         }
         return overlapGhostPacman;
 	}
+
+	// método que checa o evento de colisão entre elementos móveis (pacman e fantasmas) e muros
 	private void checkElementColideWall(ArrayList<Element> elements, int numberGhost) {
     	for (int i=0;i<=numberGhost;i++){
         	ElementMove elementMove = (ElementMove)elements.get(i);
@@ -100,7 +106,10 @@ public class GameController {
         }
 		
 	}
-	private void checkPacmanEatSomeOneAndOrTimeFruittoDesappear(ArrayList<Element> elements, Pacman pacman) {
+
+	// método que checa se o pacman comeu (se sobrepôs a) um fantasma (apenas se sobre efeito de power pellet) ou uma fruta
+	// caso positivo, realiza as atualizações necessárias (diminuir o contador de fantasmas, adicionar os respectivos pontos, etc)
+	private void checkPacmanEatSomeOneAndOrTimeFruittoDisappear(ArrayList<Element> elements, Pacman pacman) {
 
         Element eTemp;
         for(int i =1; i < elements.size(); i++){
@@ -157,6 +166,8 @@ public class GameController {
         }
         
 	}
+
+	// método que checa se já deu o tempo de aparecer uma nova fruta (Strawberry)
 	private void checkTimetoAppearFruit(ArrayList<Element> elements,  int [][]matrix) {
         
         long elapsedTime = System.currentTimeMillis()-Main.time;
@@ -176,7 +187,8 @@ public class GameController {
         }
 		
 	}
-	
+
+	// método auxiliar ao anterior que pega uma posição aleatória da matriz do plano do jogo que seja válida (não tenha elementos ou tenha apenas uma pacdot, o que na matriz é indicado por espaços preenchidos com 0)
 	private Position getValidRandomPositionMatrix(int[][] matrix) {
 		Random gerador = new Random();
 		int x;
@@ -189,6 +201,8 @@ public class GameController {
 		pos.setPosition(x, y);
 		return pos;
 	}
+
+	// método que checa se já deu o tempo dos fantasmas voltarem do estado azul para o normal (ou seja, se o efeito da powerpellet vigente expirou)
 	private void checkTimeGhostBeNormal(ArrayList<Element> elements,
 			Pacman pacman) {
         long start=pacman.getStartTimePower();
@@ -223,6 +237,7 @@ public class GameController {
 		
 	}
 
+	// método que checa se o elemento passado como parâmetro está em uma posição válida (em relação aos elementos de elemArray)
 	public boolean isValidPosition(ArrayList<Element> elemArray, Element elem){
         Element elemAux;
         for(int i = 1; i < elemArray.size(); i++){

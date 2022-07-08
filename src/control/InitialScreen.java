@@ -27,6 +27,8 @@ public class InitialScreen extends javax.swing.JFrame {
 	JMenuItem nivel3;
 	JMenuItem nivel4;
 	private static ButtonGroup niveis;
+
+	// construtor da classe que inicia a tela inicial (barra de menu e plano de fundo)
 	public InitialScreen() {
 		setIconImage((new ImageIcon("imgs/pacman_logo.png")).getImage());
 
@@ -48,19 +50,19 @@ public class InitialScreen extends javax.swing.JFrame {
 		menuBar.add(selecionarNivel);
 
 		nivel1 = new JRadioButtonMenuItem("Nível 1");
-		nivel1.addItemListener(new ListenerLevel1());
+		nivel1.addItemListener(new HandlerLevel1());
 		selecionarNivel.add(nivel1);
 
 		nivel2 = new JRadioButtonMenuItem("Nível 2");
-		nivel2.addItemListener(new ListenerLevel2());
+		nivel2.addItemListener(new HandlerLevel2());
 		selecionarNivel.add(nivel2);
 
 		nivel3 = new JRadioButtonMenuItem("Nível 3");
-		nivel3.addItemListener(new ListenerLevel3());
+		nivel3.addItemListener(new HandlerLevel3());
 		selecionarNivel.add(nivel3);
 
 		nivel4 = new JRadioButtonMenuItem("Nível 4");
-		nivel4.addItemListener(new ListenerLevel4());
+		nivel4.addItemListener(new HandlerLevel4());
 		selecionarNivel.add(nivel4);
 
 		niveis = new ButtonGroup();
@@ -73,7 +75,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		configureInitialScreen();
 	}
 
-
+	// método que configura imagem, dimensões, nome, etc da tela inicial
 	private void configureInitialScreen(){
 		int sizeWidth = Consts.NUM_CELLS * Consts.CELL_SIZE + getInsets().left + getInsets().right;
 		int sizeHeight = Consts.NUM_CELLS * Consts.CELL_SIZE + getInsets().top + getInsets().bottom;
@@ -95,10 +97,8 @@ public class InitialScreen extends javax.swing.JFrame {
         //pack();
 	}
 
-	/**
-	 * Configurar botão de Iniciar Jogo
-	 */
 
+	// handler da ação de iniciar um novo jogo
 	public class HandlerStartButton implements ActionListener{
 		public void actionPerformed(ActionEvent ev){
 			Main.initialScreen.setVisible(false);
@@ -108,6 +108,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		}
 	}
 
+	// handler da ação de carregar um jogo salvo
 	public class HandlerOpenButton implements ActionListener{
 		public void actionPerformed(ActionEvent ev){
 			Main.initialScreen.setVisible(false);  
@@ -117,7 +118,8 @@ public class InitialScreen extends javax.swing.JFrame {
 		}
 	}
 
-	public class ListenerLevel1 implements ItemListener {
+	// handler da ação de selecionar o nível 1
+	public class HandlerLevel1 implements ItemListener {
 		@Override
 		public void itemStateChanged(ItemEvent ev) {
 			if(ev.getStateChange() == ItemEvent.SELECTED) {
@@ -125,7 +127,9 @@ public class InitialScreen extends javax.swing.JFrame {
 			}
 		}
 	}
-	public class ListenerLevel2 implements ItemListener {
+
+	// handler da ação de selecionar o nível 2
+	public class HandlerLevel2 implements ItemListener {
 		@Override
 		public void itemStateChanged(ItemEvent ev) {
 			if(ev.getStateChange() == ItemEvent.SELECTED) {
@@ -133,7 +137,9 @@ public class InitialScreen extends javax.swing.JFrame {
 			}
 		}
 	}
-	public class ListenerLevel3 implements ItemListener {
+
+	// handler da ação de selecionar o nível 3
+	public class HandlerLevel3 implements ItemListener {
 		@Override
 		public void itemStateChanged(ItemEvent ev) {
 			if(ev.getStateChange() == ItemEvent.SELECTED) {
@@ -142,7 +148,8 @@ public class InitialScreen extends javax.swing.JFrame {
 		}
 	}
 
-	public class ListenerLevel4 implements ItemListener {
+	// handler da ação de selecionar o nível 4
+	public class HandlerLevel4 implements ItemListener {
 		@Override
 		public void itemStateChanged(ItemEvent ev) {
 			if(ev.getStateChange() == ItemEvent.SELECTED) {

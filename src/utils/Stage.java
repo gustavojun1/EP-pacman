@@ -6,7 +6,8 @@ public class Stage implements Serializable {
 	int id=1;
     int [][]matrix;
     String background;
-    
+
+	// construtor da classe que cria a matriz que representa o plano de jogo, além de determinar sua imagem de fundo
     public Stage(int id){
 	    this.id=id;
 	    switch (id) {
@@ -125,12 +126,18 @@ public class Stage implements Serializable {
 		}
 	    
   }
+
+  	// getter que retorna a matriz
 	public int[][] getMatrix() {
 		return matrix;
 	}
+
+	// getter que retorna o arquivo que contém a imagem fundo
 	public String getBackground() {
 		return background;
 	}
+
+	// getter que retorna a id que armazena o nível da fase
 	public int getId() {
 		return id;
 	}

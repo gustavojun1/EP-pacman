@@ -10,7 +10,8 @@ public class  Main {
 	public static long time;
 	
 	public static GameScreen gamePacMan;
-	
+
+    // método principal que executa a tela inicial
     public static void main(String[] args) {
     	
     	initialScreen = new InitialScreen();
@@ -19,7 +20,8 @@ public class  Main {
     	initialScreen.setVisible(true);
         
     }
-	
+
+    // método que inicia a tela do jogo propriamente dito
     public static void startGame(){
     	java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
