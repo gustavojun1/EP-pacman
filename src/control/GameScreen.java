@@ -125,7 +125,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 
     // método que salva o jogo (mais precisamente stage e elemArray) via serialização
     private void saveElemArrayandStage() {
-        try (FileOutputStream savefile = new FileOutputStream("savefile1.ser");) {
+        try (FileOutputStream savefile = new FileOutputStream("savefile.ser");) {
             ObjectOutputStream saida = new ObjectOutputStream(savefile);
             saida.writeObject(this.stage);
             saida.writeObject(this.elemArray);
@@ -141,7 +141,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 
     // método que abre o save do jogo serializado utilizando o método anterior
 	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException {
-        try(FileInputStream savefile = new FileInputStream("savefile1.ser")) {
+        try(FileInputStream savefile = new FileInputStream("savefile.ser")) {
             ObjectInputStream entrada = new ObjectInputStream(savefile);
             this.stage = (Stage) entrada.readObject();
             this.elemArray.addAll((ArrayList<Element>)entrada.readObject());
