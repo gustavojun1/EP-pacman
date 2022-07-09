@@ -118,24 +118,27 @@ public class GameController {
                 if(eTemp.isTransposable() && eTemp.isMortal()){
                     elements.remove(eTemp);
                     if (eTemp instanceof Ghost){
+						int score = 200*(4-pacman.getNumberGhosttoEat());
 						pacman.minusNumberGhotstoEat();
-						pacman.addScore(200*(4-pacman.getNumberGhosttoEat()));
-						pacman.addRemainingScore(200*(4-pacman.getNumberGhosttoEat()));
+						pacman.addScore(score);
+						pacman.addRemainingScore(score);
+						changeBackground(score, eTemp.getPos());
                     }
                     
-                    if (eTemp instanceof ElementGivePoint){                     
-                      pacman.addScore(((ElementGivePoint) eTemp).getNumberPoints());
-                      pacman.addRemainingScore(((ElementGivePoint) eTemp).getNumberPoints());
+                    if (eTemp instanceof ElementGivePoint){
+
+	                    pacman.addScore(((ElementGivePoint) eTemp).getNumberPoints());
+    	                pacman.addRemainingScore(((ElementGivePoint) eTemp).getNumberPoints());
                       
-                      if (eTemp instanceof PacDots){
-                    	  pacman.minusNumberDotstoEat();
-                      }
-                      if (eTemp instanceof PowerPellet){
-                    	  for(int k=1;k<=pacman.getNumberGhosttoEat(); k++){
-                    		  ((Ghost)elements.get(k)).changeGhosttoBlue("ghostBlue.png");
-                    	  }
-                    	  pacman.setStartTimePower(System.currentTimeMillis());
-                      }    
+	                    if (eTemp instanceof PacDots){
+    	                	pacman.minusNumberDotstoEat();
+						}
+            	        if (eTemp instanceof PowerPellet){
+                	    	for(int k=1;k<=pacman.getNumberGhosttoEat(); k++){
+                    			((Ghost)elements.get(k)).changeGhosttoBlue("ghostBlue.png");
+							}
+						pacman.setStartTimePower(System.currentTimeMillis());
+                    }
                       
                     }
                 }
@@ -165,6 +168,18 @@ public class GameController {
             }
         }
         
+	}
+
+	// método que muda momentaneamente o plano de fundo para indicar a pontuação obtida após comer um fantasma
+	private void changeBackground(int numPoints, Position pos) {
+		Wall pointImage = new Wall(numPoints + ".jpg");
+		pointImage.setTransposable(true);
+		pointImage.setPosition(pos.getX(), pos.getY());
+		Main.gamePacMan.addElement(pointImage);
+	}
+
+	private void checkTimeChangeBackground() {
+
 	}
 
 	// método que checa se já deu o tempo de aparecer uma nova fruta (Strawberry)

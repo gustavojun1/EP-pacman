@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="Implementação do nível 4 (funcional porém incompleto).">
+    <list default="true" id="1cecef88-8f76-4eed-95e7-b426fff2286c" name="Changes" comment="Adicionando comentários dos métodos">
+      <change afterPath="$PROJECT_DIR$/imgs/1600.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/400.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/800.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/InitialScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/InitialScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/BackgroundElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/BackgroundElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Blinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Blinky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Cherry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Cherry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Clyde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Clyde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/ElementGivePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/ElementGivePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/ElementMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/ElementMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Inky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Inky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/PacDots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/PacDots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Pacman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Pacman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Pinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Pinky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/PowerPellet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/PowerPellet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Strawberry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Strawberry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Drawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Drawing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Stage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657286825501</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Adicionando comentários dos métodos">
+      <created>1657308242001</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657308242001</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,7 +162,8 @@
     <MESSAGE value="Resolução do bug de resetar os dados ao passar de nível." />
     <MESSAGE value="Substituição dos botões da tela por um menu." />
     <MESSAGE value="Implementação do nível 4 (funcional porém incompleto)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementação do nível 4 (funcional porém incompleto)." />
+    <MESSAGE value="Adicionando comentários dos métodos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando comentários dos métodos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

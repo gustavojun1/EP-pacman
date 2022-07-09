@@ -4,6 +4,7 @@ import elements.*;
 
 import utils.Consts;
 import utils.Drawing;
+import utils.Position;
 import utils.Stage;
 
 import java.awt.Graphics;
@@ -308,4 +309,9 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 	public void dispose(){
 		super.dispose();
 	}
+
+    // getter de um elemento do array de elementos baseado
+    public Element getElement(int i) {
+        return (Element) elemArray.get(i);
+    }
 }
